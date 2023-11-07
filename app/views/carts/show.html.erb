@@ -1,0 +1,11 @@
+<% total_price = 0 %>
+<% @cart_items.each do |e| %>
+<% product = Product.find(e.product_id) %>
+<%= product.name %><br>
+<%= product.price %>円<br>
+数量：<%= e.qty %><br>
+<%= link_to "削除", cart_item_path(e), data: { turbo_method: :delete } %><br>
+<% total_price += product.price * e.qty %>
+<% end %>
+合計金額：<%= total_price %>円<br>
+<%= link_to '商品一覧', root_path %>
