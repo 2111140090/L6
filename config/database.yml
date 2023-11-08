@@ -26,6 +26,6 @@ production:
   encoding: unicode
   pool: 5
   database: db_by0m
-  username: db_by0m_user
+  username: db_by0m
   password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
   url: <%= ENV['DATABASE_URL'] %>
